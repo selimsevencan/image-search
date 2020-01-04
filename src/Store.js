@@ -2,16 +2,13 @@ import React, { createContext, useContext, useReducer } from 'react';
 
 export const StateContext = createContext();
 
-export const initialState = {
-	data: null,
-	value: '',
-}
+export const initialState = {};
 
 export const StoreProvider = ({ reducer, initialState, children }) => {
 	return (
 		<StateContext.Provider
-				value={useReducer(reducer, initialState)}
-				children={children}
+      value={useReducer(reducer, initialState)}
+      children={children}
 		/>
 )};
 
