@@ -1,18 +1,20 @@
-  import React from 'react';
-
-import { useStore } from '../../Store.js';
-import { fillValue } from '../../actions';
-
+import React, { useContext } from 'react';
+import { Context } from '../../Store';
+import './Input.css';
 
 export default () => {
-  const [{ value }, dispatch] = useStore();
-  console.log('value', value);
+  const [{value, isApiRequested}, dispatch] = useContext(Context);
+  const onChange = (e) => {
+    const value = e.target.value;
+    dispatch({type: 'FILL_INPUT',  payload: value });
+  }
   return (
-    <div className={'input'}>
+    <div className={'inputWrapper'}>
       <input
-        placeholder='Search…'
-        onChange={e => dispatch(fillValue(e.target.value))}
+        placeholder='Query'
+        onChange={onChange}
         value={value}
+        className={isApiRequested ? 'input' : 'margin-top input'}
       />
     </div>
   );

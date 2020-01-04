@@ -1,0 +1,15 @@
+.fixedHeader {
+  position: fixed;
+  background: #050417;
+  display: flex;
+  top: -1px;
+  width: 100%;
+  height: 94px;
+  padding-top: 30px;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.centeredHeader {
+  padding-top: 10%;
+}

@@ -1,49 +1,43 @@
 import {
-  FILL_VALUE,
-  SEARCH_VALUE,
-} from '../actions/types';
+  FILL_INPUT,
+  SEARCH_DATA,
+  SEARCH_SUCCESS,
+  SEARCH_ERROR,
+  SELECT_COLLECTION,
+} from '../actions';
 
-const initialState = {
-  data: [],
-  value: '',
-  isLoading: false,
-};
-// export const value = (state, { payload }) => ({
-//   ...state,
-//   value: payload.value,
-// });
-
-// const createReducer = handlers => (state, action) => {
-//   if (!handlers.hasOwnProperty(action.type)) {
-//     return state;
-//   }
-//   return handlers[action.type](state, action);
-// };
-
-// export default createReducer({
-//   [types.FILL_VALUE]: value,
-//   [types.SEARCH_VALUE]: value,
-// });
-
-export default function reducer(state = initialState, action) {
-  console.log('action', action.type);
+const reducer = (state,  action) => {
   switch (action.type) {
-    case FILL_VALUE: {
+    case FILL_INPUT:
       return {
         ...state,
-        value: action.payload.value,
+        searchTerm: action.payload,
       };
-    }
-
-    case SEARCH_VALUE: {
+    case SELECT_COLLECTION:
       return {
         ...state,
-        isLoading: action.payload.loading,
-        data: action.payload.data,
+        collection: action.payload,
       };
-    }
-
+    case SEARCH_DATA:
+      return {
+        ...state,
+        isApiRequested: true,
+        isLoading: true,
+      };
+    case SEARCH_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        data: [...action.payload],
+      };
+    case SEARCH_ERROR:
+      return {
+        ...state,
+        error: action.payload.error,
+      };
     default:
       return state;
   }
-}
+};
+
+export default reducer;

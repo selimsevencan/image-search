@@ -1,0 +1,11 @@
+.margin-top {
+  margin-top:21px;
+}
+.select {
+  text-transform: capitalize;
+  width: 425px;
+  height: 50px;
+  font-size: 14px;
+  border-radius: 4px;
+  padding-left: 20px;
+}
