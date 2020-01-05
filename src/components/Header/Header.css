@@ -14,3 +14,17 @@
 .centeredHeader {
   padding-top: 10%;
 }
+
+@media only screen and (max-width: 1100px) and (min-width: 930px) {
+  .fixedHeader {
+    display: block;
+    height: 325px;
+  }
+}
+
+@media only screen and (max-width: 930px) {
+  .fixedHeader {
+    display: block;
+    height: 325px;
+  }
+}

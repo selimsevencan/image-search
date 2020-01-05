@@ -2,10 +2,24 @@
   margin-top: 20px;
 }
 .input {
-  width: 413px;
+  width: 400px;
   height: 45px;
   border-radius: 4px;
   font-size: 14px;
   color: #050417;
   padding-left: 7px;
+}
+
+@media only screen and (max-width: 100px) {
+  .input {
+    margin-top: 10px;
+ }
+}
+
+
+@media only screen and (max-width: 425px) {
+  .input {
+    margin-top: 10px;
+    width: 200px;
+ }
 }

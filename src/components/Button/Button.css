@@ -21,3 +21,16 @@
   cursor: not-allowed;
   filter: brightness(50%);
 }
+
+@media only screen and (max-width: 1100px) and (min-width: 930px) {
+  .button {
+    margin-top: 10px;
+  }
+ }
+
+@media only screen and (max-width: 930px) {
+  .button {
+    width: 200px;
+    margin-top: 10px;
+ }
+}

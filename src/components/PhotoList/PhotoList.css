@@ -16,6 +16,7 @@
   margin: 10px;
   width: 100%;
 }
+
 .item-modal {
   margin-top: -9%;
   width: 50%;
@@ -79,4 +80,70 @@
   font-size: 18px;
   font-weight: bold;
   line-height: 13px;
+}
+
+
+@media only screen and (max-width: 1355px) and (min-width: 930px) {
+  .listWrapper {
+    column-count: 2;
+  }
+}
+
+@media only screen and (max-width: 1100px) and (min-width: 930px) {
+  .listWrapper {
+    margin-top: 360px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1000px) {
+  .modal-image  {
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width: 426px) and (max-width: 930px) {
+  .listWrapper {
+    margin-top: 360px;
+    column-count: 1;
+  }
+  .modal-image  {
+    width: 88%;
+  }
+  .item-modal {
+    height: 70vh;
+  }
+  .download {
+    position: absolute;
+    bottom: 22%;
+    left: 35%;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 930px) {
+  .user-portfolio {
+    font-size: 10px;
+  }
+  .download {
+    right: 28%;
+    width: 142px;
+    bottom: 26%;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .listWrapper {
+    margin-top: 360px;
+    column-count: 1;
+  }
+  .modal-image  {
+    width: 95%;
+    margin: 6px;
+  }
+  .item-modal {
+    height: 78vh;
+    width: 96%;
+  }
+  .download {
+    bottom: 20%;
+    left: 20%;
+    position: absolute;
+  }
 }
