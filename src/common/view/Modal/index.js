@@ -1,5 +1,6 @@
 import React from 'react';
 import './Modal.css';
+
 import Portal from '../Portal';
 
 export default (props) => {

@@ -4,6 +4,8 @@ import {
   SEARCH_SUCCESS,
   SEARCH_ERROR,
   SELECT_COLLECTION,
+  CHECK_REQUEST,
+  SET_PAGE,
 } from '../actions';
 
 const reducer = (state,  action) => {
@@ -13,6 +15,11 @@ const reducer = (state,  action) => {
         ...state,
         searchTerm: action.payload,
       };
+    case SET_PAGE:
+      return {
+        ...state,
+        page: action.payload,
+      };  
     case SELECT_COLLECTION:
       return {
         ...state,
@@ -24,12 +31,19 @@ const reducer = (state,  action) => {
         isApiRequested: true,
         isLoading: true,
       };
+    case CHECK_REQUEST:
+      return {
+        ...state,
+        data: action.payload.data,
+        isLoading: false,
+      };
     case SEARCH_SUCCESS:
       return {
         ...state,
         isLoading: false,
-        data: action.payload.results,
-        totalPage: action.payload.total_pages,
+        data: action.payload.data.results,
+        totalPage: action.payload.data.total_pages,
+        [action.payload.apiReuqestName]: action.payload.data.results,
       };
     case SEARCH_ERROR:
       return {

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { Context } from '../../Store';
 
 import List from './List';
@@ -9,15 +9,19 @@ import { getData } from '../../common/view/utils/utils.js'
 import './PhotoList.css';
 
 export default () => {
-  const [{data, isApiRequested, isLoading, totalPage, searchTerm, collection}, dispatch] = useContext(Context);
-
-  const [activePage, setPage] = useState(1);
-
+  const [state, dispatch] = useContext(Context);
   const onChange = (i) => {
-    setPage(i);
-    getData(searchTerm, collection, i, dispatch);
+    getData(state, i, dispatch);
+    dispatch({type: 'SET_PAGE',  payload: i });
   }
-  
+
+  const {
+    data, 
+    isApiRequested, 
+    isLoading, 
+    totalPage,
+    page,
+  } = state;
   if (!isApiRequested) return null;
   return (
     <div className={'container'}>
@@ -30,7 +34,7 @@ export default () => {
           /> 
           <Pagination 
             totalPage={totalPage}
-            activePage={activePage}
+            activePage={page}
             onChange={onChange}
           />
         </>
