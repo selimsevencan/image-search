@@ -1,21 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Context } from '../../Store';
+import { getData } from '../../common/view/utils/utils';
 
-import { useStore } from '../../Store.js';
-import { searchValue } from '../../actions';
-
+import './Button.css';
 
 export default () => {
-  const [{ value }, dispatch] = useStore();
-
+  const [{ searchTerm, collection, isLoading, isApiRequested, page }, dispatch] = useContext(Context);
   const onClick = () => {
-    dispatch(searchValue(value));
-  }
+    getData(searchTerm, collection, page, dispatch);
+  };
+  const isDisabled = !Boolean(searchTerm) || isLoading;
   return (
-    <div className={'input'}>
+    <div className={'buttonWrapper'}>
       <button
         onClick={onClick}
+        disabled={isDisabled}
+        className={isApiRequested ? 'button' : 'button margin-top'}
       >
-        Search
+        SEARCH
       </button>
     </div>
   );

@@ -1,17 +1,6 @@
-import * as types from './types';
+export const FILL_INPUT = 'FILL_INPUT';
+export const SELECT_COLLECTION = 'SELECT_COLLECTION';
+export const SEARCH_DATA = 'SEARCH_DATA';
+export const SEARCH_SUCCESS = 'SEARCH_SUCCESS';
+export const SEARCH_ERROR = 'SEARCH_ERROR';
 
-export const fillValue = value => {
-  return ({ type: types.FILL_VALUE, payload: { value } })
-};
-
-export const searchValue = value => {
-  const url = `${process.env.API_BASE}/search/photos?query=${value}`;
-  console.log('url', url);
-  return async function(dispatch) {
-    dispatch({
-      type: types.SEARCH_VALUE,
-      payload: {value}
-    });
-  };
-  // return ({ type: types.SEARCH_VALUE, payload: { value } })
-};

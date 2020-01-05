@@ -1,25 +1,24 @@
 import React from 'react';
-import { StoreProvider, initialState } from "./Store";
-import Input from './components/Input';
-import Button from './components/Button';
-import DropDown from './components/DropDown';
+import Store from './Store';
+import reducer from "./reducers";
 
-import reducers from "./reducers";
+import Header from './components/Header';
+import Loading from './components/Loading';
+import PhotoList from './components/PhotoList/Container';
 
 import './App.css';
 
 function App() {
     return (
-      <StoreProvider 
-        initialState={initialState} 
-        reducer={reducers}
+      <Store
+        reducer={reducer}
       >
-        <div className={'mainWrapper'}>
-          <Input />
-          <Button />
-          <DropDown />
+        <div className={'appWrapper'}>
+          <Header />
+          <PhotoList />
+          <Loading />
         </div>
-      </StoreProvider>
+      </Store>
     );
 }
 

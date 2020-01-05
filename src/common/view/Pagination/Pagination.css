@@ -1,0 +1,19 @@
+.pagination {
+  position: fixed;
+  top: 25%;
+}
+
+.pagination-controls-button {
+  background-color: white;
+  border-radius: 0.15em;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  cursor: default;
+  margin: 0.25em 0.25em;
+  padding: 0.5em 0.75em;
+  cursor: pointer;
+}
+
+.pagination-controls-button-active {
+  background-color: #4D7EA8;
+  color: white;
+}

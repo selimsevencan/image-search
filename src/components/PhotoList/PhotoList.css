@@ -1,0 +1,67 @@
+.container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: white;
+}
+.listWrapper {
+  margin-top: 160px;
+  margin-left: 20px;
+  display: grid;
+  grid-column-gap: 10px;
+  grid-template-columns: auto auto auto;
+}
+
+.list-item {
+  width: auto;
+}
+.item-modal {
+  margin-top: 10px;
+  width: 50%;
+  height: 80vh;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.modal-image {
+  margin: 25px;
+  text-align: center;
+  width: 93%;
+  height: 20em;
+}
+.user {
+  display: flex;
+  margin: 25px;
+}
+.user-image {
+  height: 60px;
+  width: 60px;
+  border-radius: 40px;
+  margin-top: 8px;
+}
+.user-detail {
+  margin-left: 10px;
+  margin-top: -10px;
+}
+.user-name {
+  color: #000000;
+  font-weight: bold;
+  font-size: 20px;
+}
+.user-portfolio {
+  color: #2A2B8D;
+  font-weight: bold;
+  font-size: 15px;
+}
+.download {
+  margin-left: auto;
+  background: #FFFFFF;
+  border: 2px solid #2A2B8D;
+  box-sizing: border-box;
+  border-radius: 10px;
+  width: 200px;
+  height: 60px;
+  color: #2A2B8D;
+  text-align: right;
+  padding: 20px;
+}

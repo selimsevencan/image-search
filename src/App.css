@@ -1,4 +1,10 @@
-.mainWrapper {
-  display: flex;
-  padding: 30px;
+.appWrapper {
+  background: #050417;
+  height: 100vh;
+  text-align: center;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
 }

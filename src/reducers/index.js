@@ -1,18 +1,44 @@
-import * as types from '../actions/types';
+import {
+  FILL_INPUT,
+  SEARCH_DATA,
+  SEARCH_SUCCESS,
+  SEARCH_ERROR,
+  SELECT_COLLECTION,
+} from '../actions';
 
-export const value = (state, { payload }) => ({
-  ...state,
-  value: payload.value,
-});
-
-const createReducer = handlers => (state, action) => {
-  if (!handlers.hasOwnProperty(action.type)) {
-    return state;
+const reducer = (state,  action) => {
+  switch (action.type) {
+    case FILL_INPUT:
+      return {
+        ...state,
+        searchTerm: action.payload,
+      };
+    case SELECT_COLLECTION:
+      return {
+        ...state,
+        collection: action.payload,
+      };
+    case SEARCH_DATA:
+      return {
+        ...state,
+        isApiRequested: true,
+        isLoading: true,
+      };
+    case SEARCH_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        data: action.payload.results,
+        totalPage: action.payload.total_pages,
+      };
+    case SEARCH_ERROR:
+      return {
+        ...state,
+        error: action.payload.error,
+      };
+    default:
+      return state;
   }
-  return handlers[action.type](state, action);
 };
 
-export default createReducer({
-  [types.FILL_VALUE]: value,
-  [types.SEARCH_VALUE]: value,
-});
+export default reducer;

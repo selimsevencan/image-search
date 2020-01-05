@@ -1,48 +1,38 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Context } from '../../Store';
 
-// import { useStore } from '../../Store.js';
-// import {  } from '../../actions';
+import './DropDown.css';
 
 const options = [
-  {
-    value: 'featured',
-    label: 'Featured',
-  },
-  {
-    value: 'wallpapers',
-    label: 'Wallpapers',
-  },
-  {
-    value: 'nature',
-    label: 'Nature',
-  },
-  {
-    value: 'archtiture',
-    label: 'Archtiture',
-  },
-  {
-    value: 'textures',
-    label: 'Textures',
-  }
+  'featured',
+  'wallpapers',
+  'nature',
+  'archtiture',
+  'textures',
 ]
 
 export default () => {
+  const [{collection, isApiRequested}, dispatch] = useContext(Context);
+
   const onChange = (e) => {
-    console.log('e', e.target.value);
+    dispatch({type: 'SELECT_COLLECTION',  payload: e.target.value });
   }
+
   return (
-    <div className={'input'}>
+    <div className={'dropdownWrapper'}>
       <select
         onChange={onChange}
+        placeholder={'Collections'}
+        value={collection}
+        className={isApiRequested ? 'select' : 'margin-top  select'}
       >
         {
           options.map(item => {
             return (
             <option
-              key={item.value}
-              value={item.value}
+              key={item}
             >
-              {item.label}
+              {item}
             </option>)
           })
         }
