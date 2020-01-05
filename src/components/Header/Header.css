@@ -6,7 +6,7 @@
   width: 100%;
   height: 94px;
   padding-top: 30px;
-  justify-content: space-between;
+  justify-content: space-evenly;
   overflow: hidden;
 }
 
