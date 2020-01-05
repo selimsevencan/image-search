@@ -1,5 +1,5 @@
 .margin-top {
-  margin-top:21px;
+  margin-top: 21px;
 }
 .select {
   text-transform: capitalize;
@@ -8,4 +8,6 @@
   font-size: 14px;
   border-radius: 4px;
   padding-left: 20px;
+  color: #050417;
+  box-shadow: 1px 7px 3px -4px #D5D7E5;
 }

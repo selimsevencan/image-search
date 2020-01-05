@@ -10,10 +10,10 @@ export default () => {
     searchTerm,
     isLoading, 
     isApiRequested,
-    page,
   } = state;
   const onClick = () => {
-    getData(state, page, dispatch);
+    getData(state, 1, dispatch);
+    dispatch({type: 'SET_PAGE',  payload: 1 });
   };
   const isDisabled = !Boolean(searchTerm) || isLoading;
   return (

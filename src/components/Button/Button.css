@@ -12,6 +12,7 @@
   font-weight: bolder;
   color: #FFFFFF;
   cursor: pointer;
+  outline: none;
 }
 .button:hover {
   filter: brightness(150%);

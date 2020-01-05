@@ -12,28 +12,27 @@
   column-gap: 1em;
 }
 .list-item {
-  background-color: #eee;
   display: inline-block;
-  margin: 0 0 1em;
+  margin: 10px;
   width: 100%;
 }
 .item-modal {
-  margin-top: 10px;
+  margin-top: -9%;
   width: 50%;
-  height: 80vh;
+  height: 60vh;
   background-color: #fff;
   border-radius: 10px;
 }
 
 .modal-image {
-  margin: 25px;
+  margin: 20px;
   text-align: center;
-  width: 93%;
+  width: 95%;
   height: 20em;
 }
 .user {
   display: flex;
-  margin: 25px;
+  margin: 5px 20px;
 }
 .user-image {
   height: 60px;
@@ -49,6 +48,10 @@
   color: #000000;
   font-weight: bold;
   font-size: 20px;
+  line-height: 15px;
+}
+.extra-line {
+  line-height: 50px;
 }
 .user-portfolio {
   color: #2A2B8D;
@@ -73,4 +76,7 @@
 }
 .download-text {
   margin-left: auto;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 13px;
 }
