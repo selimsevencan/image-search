@@ -10,8 +10,8 @@ class Pagination extends React.Component {
     } = this.props;
     let controls = [];
     let totalPageCount = totalPage / 10;
-    if (totalPageCount > 15) {
-      totalPageCount = 15;
+    if (totalPageCount > 12) {
+      totalPageCount = 12;
     }
     for (let i = 1; i <= totalPageCount; i++) {
       const baseClassName = 'pagination-controls-button';
@@ -30,6 +30,10 @@ class Pagination extends React.Component {
   }
 
   render() {
+    const {
+      totalPage
+    } = this.props;
+    if (totalPage < 20) return null;
     return (
       <div className='pagination'>
         <div className='pagination-controls'>

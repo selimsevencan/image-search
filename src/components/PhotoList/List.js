@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Modal from '../../common/view/Modal';
+import downloadSvg from '../../common/view/Icon/download.svg';
+
 import './PhotoList.css';
 
 const renderModalContent = (item) => {
@@ -22,7 +24,8 @@ const renderModalContent = (item) => {
         target={'_blank'}
         className={'download'}
       >
-        Download
+        <img className={'download-svg'} src={downloadSvg} alt={item.alt_description} />
+        <span className={'download-text'}>Download</span>
       </a>
     </div>
   </div>

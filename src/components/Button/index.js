@@ -5,9 +5,15 @@ import { getData } from '../../common/view/utils/utils';
 import './Button.css';
 
 export default () => {
-  const [{ searchTerm, collection, isLoading, isApiRequested, page }, dispatch] = useContext(Context);
+  const [state, dispatch] = useContext(Context);
+  const { 
+    searchTerm,
+    isLoading, 
+    isApiRequested,
+    page,
+  } = state;
   const onClick = () => {
-    getData(searchTerm, collection, page, dispatch);
+    getData(state, page, dispatch);
   };
   const isDisabled = !Boolean(searchTerm) || isLoading;
   return (
