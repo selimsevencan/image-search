@@ -5,24 +5,31 @@ import downloadSvg from '../../common/view/Icon/download.svg';
 import './PhotoList.css';
 
 const renderModalContent = (item) => {
+  const hasInstagram = !!item.user.instagram_username;
   return <div className={'item-modal'}>
     <img className='modal-image' src={item.urls.regular} alt={item.alt_description} />
     <div className={'user'}>
-      <img className={'user-image'} src={item.user.profile_image.small} alt={item.user.name} />
+      <img className={'user-image'} src={item.user.profile_image.large} alt={item.user.name} />
       <div className={'user-detail'}>
-        <p className={'user-name'}>{item.user.first_name}</p>
-        <a 
-          className={'user-portfolio'}
-          href={item.user.portfolio_url}
-          target={'_blank'}
-        >
-            {item.user.portfolio_url}
-        </a>
+        <p className={hasInstagram ? 'user-name' : 'user-name extra-line'}>{item.user.first_name}</p>
+        { 
+          hasInstagram &&
+          <a
+            className={'user-portfolio'}
+            href={`https://instagram.com/${item.user.instagram_username}`}
+            target={'_blank'}
+            title={item.user.name}
+          >
+              @{item.user.instagram_username}
+          </a>
+        }
       </div>
       <a
-        href={item.links.download}
+        download={item.urls.raw}
+        href={item.urls.raw}
         target={'_blank'}
         className={'download'}
+        title={item.alt_description}
       >
         <img className={'download-svg'} src={downloadSvg} alt={item.alt_description} />
         <span className={'download-text'}>Download</span>
