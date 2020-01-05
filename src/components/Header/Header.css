@@ -8,6 +8,7 @@
   padding-top: 30px;
   justify-content: space-evenly;
   overflow: hidden;
+  z-index: 1000;
 }
 
 .centeredHeader {

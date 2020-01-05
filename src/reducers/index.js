@@ -28,7 +28,8 @@ const reducer = (state,  action) => {
       return {
         ...state,
         isLoading: false,
-        data: [...action.payload],
+        data: action.payload.results,
+        totalPage: action.payload.total_pages,
       };
     case SEARCH_ERROR:
       return {

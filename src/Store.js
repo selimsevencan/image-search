@@ -8,6 +8,7 @@ const initialState = {
     isLoading: false,
     isApiRequested: false,
     collection: 'featured',
+    page: 1,
 };
 
 const Store = ({children}) => {

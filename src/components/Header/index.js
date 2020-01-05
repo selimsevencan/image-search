@@ -10,7 +10,6 @@ import './Header.css';
 
 export default () => {
   const [{isApiRequested}] = useContext(Context);
-  console.log('state', isApiRequested);
   return (
     <div className={isApiRequested ? 'fixedHeader' : 'centeredHeader'}>
       <Logo />

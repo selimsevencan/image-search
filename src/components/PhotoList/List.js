@@ -28,14 +28,13 @@ const renderModalContent = (item) => {
   </div>
 }
 
-export default ({data}) => {
+export default ({data, totalPage}) => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [itemData, setItem] = useState({});
   const onClick = (item) => {
     setItem(item);
     setModalOpen(true);
   }
-  console.log('itemData', itemData);
   return (
     <div className={'listWrapper'}>
       {data.map(item => {

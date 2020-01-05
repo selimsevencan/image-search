@@ -1,5 +1,5 @@
 import React from 'react';
-import Store from "./Store.js";
+import Store from './Store';
 import reducer from "./reducers";
 
 import Header from './components/Header';
