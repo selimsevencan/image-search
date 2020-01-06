@@ -15,12 +15,10 @@ const Button = styled.button`
   font-size: 14px;
   letter-spacing: 0.1em;
   border: 0;
-  font-weight: bolder;
   color: #FFFFFF;
   cursor: pointer;
   outline: none;
-  border: 0;
-
+  font-weight: 900;
   &:hover {
     filter: brightness(150%);
   }
@@ -31,6 +29,9 @@ const Button = styled.button`
   @media only screen and (max-width: 930px) {
     width: 200px;
   }
+  ${({ extraMargin }) => extraMargin && `
+    margin-top: 75px;
+  `}
 `;
 
 export default () => {
@@ -50,7 +51,7 @@ export default () => {
       <Button
         onClick={onClick}
         disabled={isDisabled}
-        className={isApiRequested ? 'button' : 'button margin-top'}
+        extraMargin={!isApiRequested}
       >
         SEARCH
       </Button>

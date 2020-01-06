@@ -47,7 +47,7 @@ export default () => {
       { 
        !data.length && isApiRequested && !isLoading && 
        <EmptyState>
-        There is no data with these conditions. Please search with different conditions
+        There is no data with these conditions.
       </EmptyState>
       }
     </PhotoListContainer>

@@ -39,18 +39,17 @@ const UserProfileImage = styled.img`
   height: 60px;
   width: 60px;
   border-radius: 40px;
-  margin-top: 8px;
 `;
 
 const UserDetail = styled.div`
   margin-left: 10px;
-  margin-top: -10px;
 `;
 
 const UserName = styled.p`
   color: #000000;
   font-weight: bold;
   font-size: 20px;
+  line-height: 0.1;
   @media only screen and (max-width: 950px) {
     line-height: 5px;
   }
@@ -60,6 +59,7 @@ const UserInstagram = styled.a`
   color: #2A2B8D;
   font-weight: bold;
   font-size: 15px;
+  text-decoration: none;
   @media only screen and (max-width: 780px) {
     font-size: 10px;
   }
@@ -67,6 +67,7 @@ const UserInstagram = styled.a`
 
 const DownloadButtonWrapper = styled.div`
   margin-left: auto;
+  
   @media only screen and (max-width: 950px) {
     text-align: center;
     margin-top: 15px;
@@ -86,7 +87,10 @@ const DownloadButton = styled.a`
   display: flex;
   cursor: pointer;
   text-decoration: none;
-
+  &:hover {
+    background: #efefef;
+    filter: brightness(100%);
+  }
   @media only screen and (max-width: 950px) {
     display: inline-flex;
   }
@@ -144,7 +148,6 @@ const renderModalContent = (item) => {
           { 
             hasInstagram &&
             <UserInstagram
-              className={'user-portfolio'}
               href={`https://instagram.com/${item.user.instagram_username}`}
               target={'_blank'}
               title={item.user.name}
