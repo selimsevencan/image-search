@@ -1,21 +1,38 @@
 import React, { useContext } from 'react';
 import { Context } from '../../Store';
-import './Input.css';
+import styled from 'styled-components';
+
+const InputWrapper = styled.div`
+  margin-top: 11px;
+`;
+
+const Input = styled.input`
+  width: 400px;
+  height: 45px;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #050417;
+  padding-left: 7px;
+  border: 0;
+
+  @media only screen and (max-width: 425px) {
+    width: 200px;
+  }
+`;
 
 export default () => {
-  const [{value, isApiRequested}, dispatch] = useContext(Context);
+  const [{value }, dispatch] = useContext(Context);
   const onChange = (e) => {
     const value = e.target.value;
     dispatch({type: 'FILL_INPUT',  payload: value });
   }
   return (
-    <div className={'inputWrapper'}>
-      <input
+    <InputWrapper>
+      <Input
         placeholder='Query'
         onChange={onChange}
         value={value}
-        className={isApiRequested ? 'input' : 'margin-top input'}
       />
-    </div>
+    </InputWrapper>
   );
 };

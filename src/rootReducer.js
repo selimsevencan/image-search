@@ -6,9 +6,19 @@ import {
   SELECT_COLLECTION,
   CHECK_REQUEST,
   SET_PAGE,
-} from '../actions';
+} from './actions';
 
-const reducer = (state,  action) => {
+export const initialState = {
+  data: [],
+  error: null,
+  searchTerm: '',
+  isLoading: false,
+  isApiRequested: false,
+  collection: 'featured',
+  page: 1,
+};
+
+export const reducer = (state = initialState,  action) => {
   switch (action.type) {
     case FILL_INPUT:
       return {

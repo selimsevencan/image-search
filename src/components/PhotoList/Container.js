@@ -1,18 +1,23 @@
 import React, { useContext } from 'react';
 import { Context } from '../../Store';
-
+import styled from 'styled-components';
 import List from './List';
 import Pagination from '../../common/view/Pagination';
 import EmptyState from '../../common/view/EmptyState';
-import { getData } from '../../common/view/utils/utils.js'
+import { getData } from '../../utils.js';
 
-import './PhotoList.css';
+const PhotoListContainer = styled.div`
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: white;
+`;
 
 export default () => {
   const [state, dispatch] = useContext(Context);
   const onChange = (i) => {
-    getData(state, i, dispatch);
     dispatch({type: 'SET_PAGE',  payload: i });
+    getData(state, i, dispatch);
   }
 
   const {
@@ -24,7 +29,7 @@ export default () => {
   } = state;
   if (!isApiRequested) return null;
   return (
-    <div className={'container'}>
+    <PhotoListContainer>
       {
         data.length > 0 &&
         <>
@@ -45,6 +50,6 @@ export default () => {
         There is no data with these conditions. Please search with different conditions
       </EmptyState>
       }
-    </div>
+    </PhotoListContainer>
   );
 };

@@ -1,42 +1,79 @@
 import React, { useContext } from 'react';
 import { Context } from '../../Store';
+import styled from 'styled-components';
 
-import './DropDown.css';
+const DropdownWrapper = styled.div`
+  margin-top: 11px;
+`;
 
+const Select = styled.select`
+  text-transform: capitalize;
+  width: 413px;
+  height: 50px;
+  font-size: 14px;
+  border-radius: 4px;
+  padding-left: 20px;
+  color: #050417;
+  box-shadow: 1px 7px 3px -4px #D5D7E5;
+
+  @media only screen and (max-width: 425px) {
+    width: 213px;
+  }
+`;
 const options = [
-  'featured',
-  'wallpapers',
-  'nature',
-  'archtiture',
-  'textures',
-]
+  {
+    value: 212915,
+    name: 'nature'
+  },
+  {
+    value: 490,
+    name: 'architecture',
+  },
+  {
+    value: 1224492,
+    name: 'featured'
+  },
+  {
+    value: 827737,
+    name: 'sport'
+  },
+  {
+    value: 220388,
+    name: 'wallpapers',
+  },
+  {
+    value: 528237,
+    name: 'textures',
+  }
+];
 
 export default () => {
-  const [{collection, isApiRequested}, dispatch] = useContext(Context);
+  const [{collection}, dispatch] = useContext(Context);
 
   const onChange = (e) => {
     dispatch({type: 'SELECT_COLLECTION',  payload: e.target.value });
   }
 
   return (
-    <div className={'dropdownWrapper'}>
-      <select
+    <DropdownWrapper>
+      <Select
         onChange={onChange}
         placeholder={'Collections'}
         value={collection}
-        className={isApiRequested ? 'select' : 'margin-top  select'}
+        className={'select'}
       >
         {
           options.map(item => {
             return (
             <option
-              key={item}
+              key={item.value}
+              value={item.name}
             >
-              {item}
+              {item.name}
             </option>)
           })
         }
-      </select>
-    </div>
+      </Select>
+    </DropdownWrapper>
   );
 };

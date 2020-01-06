@@ -1,9 +1,13 @@
 import React from 'react';
+import styled from 'styled-components';
 
-import './Logo.css';
+const LogoWrapper = styled.div`
+ margin-left: -20px;
+`;
+
 export default () => {
   return (
-    <div className={'logoWrapper'}>
+    <LogoWrapper>
     <svg width="222" height="131" viewBox="0 0 222 131" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect x="76" width="70" height="70" rx="26" fill="url(#paint0_linear)"/>
       <g clipPath="url(#clip0)">
@@ -23,6 +27,6 @@ export default () => {
         </clipPath>
         </defs>
       </svg>
-    </div>
+    </LogoWrapper>
   )
 }
