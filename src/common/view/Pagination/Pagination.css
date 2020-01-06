@@ -1,6 +1,6 @@
-.pagination {
-  position: fixed;
-  top: 25%;
+.pagination-controls {
+  display: inline-flex;
+  margin: 0 auto;
 }
 
 .pagination-controls-button {
@@ -13,13 +13,11 @@
   cursor: pointer;
 }
 
+.pagination-controls-button:hover {
+  filter: brightness(50%);
+}
+
 .pagination-controls-button-active {
   background-color: #4D7EA8;
   color: white;
-}
-
-@media only screen and (max-width: 1100px) {
-  .pagination {
-    top: 53%;
-  }
 }

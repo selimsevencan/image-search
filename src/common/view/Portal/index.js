@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import './Portal.css';
-
 const portalRoot = document.getElementById('portal-root');
 
 class Portal extends React.Component {

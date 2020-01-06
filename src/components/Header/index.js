@@ -4,7 +4,7 @@ import { Context } from '../../Store';
 import Logo from '../Logo';
 import Input from '../Input';
 import Button from '../Button';
-import DropDown from '../DropDown';
+import Dropdown from '../Dropdown';
 
 import './Header.css';
 
@@ -14,7 +14,7 @@ export default () => {
     <div className={isApiRequested ? 'fixedHeader' : 'centeredHeader'}>
       <Logo />
       <Input />
-      <DropDown />
+      <Dropdown />
       <Button />
     </div>
   )

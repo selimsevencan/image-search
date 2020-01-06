@@ -1,10 +1,17 @@
 import React from 'react';
-import './EmptyState.css';
+import styled from 'styled-components'
+
+const EmptyState = styled.div`
+  color: #2A2B8D;
+  position: absolute;
+  top: 40%;
+  left: 30%;
+`;
 
 export default ({children}) => {
   return (
-    <div className={'empty-state'}>
-        {children}
-    </div>
+    <EmptyState>
+      {children}
+    </EmptyState>
   );
 };

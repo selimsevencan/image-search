@@ -1,36 +1,3 @@
 .margin-top {
-  margin-top: 87px;
-}
-.button {
-  background: #2A2B8D;
-  border-radius: 25px;
-  width: 246px;
-  height: 50px;
-  font-size: 14px;
-  letter-spacing: 0.1em;
-  border: 0;
-  font-weight: bolder;
-  color: #FFFFFF;
-  cursor: pointer;
-  outline: none;
-}
-.button:hover {
-  filter: brightness(150%);
-}
-.button:disabled {
-  cursor: not-allowed;
-  filter: brightness(50%);
-}
-
-@media only screen and (max-width: 1100px) and (min-width: 930px) {
-  .button {
-    margin-top: 10px;
-  }
- }
-
-@media only screen and (max-width: 930px) {
-  .button {
-    width: 200px;
-    margin-top: 10px;
- }
+  margin-top: 75px;
 }
