@@ -8,7 +8,7 @@ const DropdownWrapper = styled.div`
 
 const Select = styled.select`
   text-transform: capitalize;
-  width: 413px;
+  width: 410px;
   height: 50px;
   font-size: 14px;
   border-radius: 4px;

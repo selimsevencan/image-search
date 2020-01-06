@@ -12,7 +12,7 @@ const Input = styled.input`
   border-radius: 4px;
   font-size: 14px;
   color: #050417;
-  padding-left: 7px;
+  padding-left: 8px;
   border: 0;
 
   @media only screen and (max-width: 425px) {
