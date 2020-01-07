@@ -30,7 +30,8 @@ export const getData = (state, page, dispatch) => {
 }
 
 export const checkRequest = (apiReuqestName) => {
-  const key = JSON.parse(localStorage.getItem('key')).value;
+  const hasLocalStorage = localStorage.getItem('key');
+  const key = hasLocalStorage && JSON.parse(localStorage.getItem('key')).value;
   if (apiReuqestName === key) {
     return true;
   }
