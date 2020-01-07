@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Context } from '../../Store';
 import { getData } from '../../utils.js';
-
+import { Link } from "react-router-dom";
 import styled from 'styled-components';
 
 const ButtonContainer = styled.div`
@@ -40,21 +40,27 @@ export default () => {
     searchTerm,
     isLoading,
     isApiRequested,
+    collection,
   } = state;
   const onClick = () => {
     dispatch({type: 'SET_PAGE',  payload: 1 });
     getData(state, 1, dispatch);
   };
   const isDisabled = !Boolean(searchTerm) || isLoading;
+  
   return (
     <ButtonContainer>
-      <Button
-        onClick={onClick}
-        disabled={isDisabled}
-        extraMargin={!isApiRequested}
+      <Link 
+        to={`/list/${searchTerm}/${collection}`}
       >
-        SEARCH
-      </Button>
+        <Button
+          onClick={onClick}
+          disabled={isDisabled}
+          extraMargin={!isApiRequested}
+        >
+          SEARCH
+        </Button>
+      </Link>
     </ButtonContainer>
   );
 };

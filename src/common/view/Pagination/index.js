@@ -13,13 +13,14 @@ const PaginationButton = styled.div`
   margin: 0.25em 0.25em;
   padding: 0.5em 0.75em;
   cursor: pointer;
-
+  &:hover {
+    filter: brightness(50%);
+  }
   ${({ active }) => active && `
     background-color: #4D7EA8;
     color: white;
   `}
 `;
-
 
 class Pagination extends React.Component {
   createControls = () => {

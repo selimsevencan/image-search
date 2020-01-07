@@ -1,9 +1,26 @@
 import React, { useContext } from 'react';
 import { Context } from '../../Store';
+
 import styled from 'styled-components';
 
 const DropdownWrapper = styled.div`
   margin-top: 11px;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 49px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    width: 394px;
+    height: 5px;
+    background: #D5D7E5;
+    opacity: 0.7;
+    border-radius: 0 0 4px 4px;
+}
 `;
 
 const Select = styled.select`
@@ -12,14 +29,21 @@ const Select = styled.select`
   height: 50px;
   font-size: 14px;
   border-radius: 4px;
-  padding-left: 20px;
+  padding-left: 8px;
   color: #050417;
-  box-shadow: 1px 7px 3px -4px #D5D7E5;
-
+  border: 0;
+  -moz-appearance:none;
+  -webkit-appearance:none;
+  appearance:none;
+  &:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+  }
   @media only screen and (max-width: 425px) {
     width: 213px;
   }
 `;
+
 const options = [
   {
     value: 212915,
@@ -38,11 +62,11 @@ const options = [
     name: 'sport'
   },
   {
-    value: 220388,
+    value: 343012,
     name: 'wallpapers',
   },
   {
-    value: 528237,
+    value: 363,
     name: 'textures',
   }
 ];
