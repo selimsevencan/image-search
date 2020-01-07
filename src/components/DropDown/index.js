@@ -21,6 +21,11 @@ const DropdownWrapper = styled.div`
     opacity: 0.7;
     border-radius: 0 0 4px 4px;
 }
+  @media only screen and (max-width: 425px) {
+    &:after { 
+      width: 213px;
+  }
+}
 `;
 
 const Select = styled.select`
