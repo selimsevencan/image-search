@@ -26,6 +26,10 @@ ${({ isFixed }) => isFixed && `
     display: block;
     height: 350px;
   }
+  @media only screen and (max-width: 780px) {
+    padding-top: 10px;
+    height: auto;
+  }
 `}
   ${({ isFixed }) => !isFixed && `
       padding-top: 10%;

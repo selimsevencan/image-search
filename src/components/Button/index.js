@@ -6,6 +6,10 @@ import styled from 'styled-components';
 
 const ButtonContainer = styled.div`
   margin-top: 11px;
+
+  @media only screen and (max-width: 780px) {
+    margin: 10px 0;
+  }
 `;
 const Button = styled.button`
   background: #2A2B8D;
@@ -29,6 +33,7 @@ const Button = styled.button`
   @media only screen and (max-width: 930px) {
     width: 200px;
   }
+
   ${({ extraMargin }) => extraMargin && `
     margin-top: 75px;
   `}

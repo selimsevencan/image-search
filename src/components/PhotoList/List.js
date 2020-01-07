@@ -94,6 +94,10 @@ const DownloadButton = styled.a`
   @media only screen and (max-width: 950px) {
     display: inline-flex;
   }
+
+  @media only screen and (max-width: 780px) {
+    width: 150px;
+  }
 `;
 
 const DownloadIcon = styled.img`
@@ -108,25 +112,28 @@ const DownloadText = styled.span`
 `;
 
 const PhotoListWrapper = styled.div`
-  margin-top: 160px;
+  margin-top: 120px;
   column-count: 3;
   column-gap: 1em;
   padding: 20px;
 
-  @media only screen and (max-width: 1355px) and (min-width: 930px) {
-    margin-top: 400px;
+  @media only screen and (max-width: 1355px) and (min-width: 1100px) {
+    margin-top: 130px;
     column-count: 2;
   }
 
   @media only screen and (max-width: 1100px) and (min-width: 930px) {
     margin-top: 400px;
+    column-count: 2;
   }
 
   @media only screen and (max-width: 950px) {
     margin-top: 400px;
     column-count: 1;
   }
-
+  @media only screen and (max-width: 780px) {
+    margin-top: 350px;
+  }
 `;
 
 const ListItem = styled.div`
