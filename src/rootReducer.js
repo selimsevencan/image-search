@@ -14,7 +14,7 @@ export const initialState = {
   searchTerm: '',
   isLoading: false,
   isApiRequested: false,
-  collection: 'featured',
+  collection: 'nature',
   page: 1,
 };
 

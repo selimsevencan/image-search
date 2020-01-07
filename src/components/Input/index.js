@@ -21,7 +21,7 @@ const Input = styled.input`
 `;
 
 export default () => {
-  const [{value }, dispatch] = useContext(Context);
+  const [{ searchTerm }, dispatch] = useContext(Context);
   const onChange = (e) => {
     const value = e.target.value;
     dispatch({type: 'FILL_INPUT',  payload: value });
@@ -31,7 +31,7 @@ export default () => {
       <Input
         placeholder='Query'
         onChange={onChange}
-        value={value}
+        value={searchTerm}
       />
     </InputWrapper>
   );

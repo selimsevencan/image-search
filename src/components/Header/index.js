@@ -7,17 +7,19 @@ import Input from '../Input';
 import Button from '../Button';
 import Dropdown from '../Dropdown';
 
-const Header = styled.div`
-
+const Header = styled.header`
 ${({ isFixed }) => isFixed && `
   position: fixed;
   background: #050417;
   display: flex;
-  top: -1px;
+  top: 0;
+  left: 0;
+  right: 0;
   width: 100%;
   height: 94px;
   padding-top: 30px;
   justify-content: space-evenly;
+  text-align: center;
   overflow: hidden;
   z-index: 2;
   @media only screen and (max-width: 1300px) {
@@ -26,7 +28,7 @@ ${({ isFixed }) => isFixed && `
   }
 `}
   ${({ isFixed }) => !isFixed && `
-    padding-top: 10%;
+      padding-top: 10%;
     }
   `}
 `;

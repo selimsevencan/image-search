@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Modal from '../../common/view/Modal';
 import downloadSvg from '../../common/view/Icon/download.svg';
@@ -135,70 +135,97 @@ const ListItem = styled.div`
   width: 100%;
 `;
 
-
-const renderModalContent = (item) => {
-  const hasInstagram = !!item.user.instagram_username;
-  return <ModalContent>
-    <ModalImage src={item.urls.regular} alt={item.alt_description} />
-    <User>
-      <UserDetailWrapper>
-        <UserProfileImage src={item.user.profile_image.large} alt={item.user.name} />
-        <UserDetail>
-          <UserName>{item.user.first_name}</UserName>
-          { 
-            hasInstagram &&
-            <UserInstagram
-              href={`https://instagram.com/${item.user.instagram_username}`}
-              target={'_blank'}
-              title={item.user.name}
-            >
-                @{item.user.instagram_username}
-            </UserInstagram>
-          }
-        </UserDetail>
-      </UserDetailWrapper>
-      <DownloadButtonWrapper>
-        <DownloadButton
-          download={item.urls.raw}
-          href={item.urls.raw}
-          target={'_blank'}
-          title={item.alt_description}
-        >
-          <DownloadIcon src={downloadSvg} alt={item.alt_description} />
-          <DownloadText className={'download-text'}>Download</DownloadText>
-        </DownloadButton>
-      </DownloadButtonWrapper>
-    </User>
-  </ModalContent>
-}
-
-export default ({data, totalPage}) => {
-  const [isModalOpen, setModalOpen] = useState(false);
-  const [itemData, setItem] = useState({});
-  const onClick = (item) => {
-    setItem(item);
-    setModalOpen(true);
+ class PhotoList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isModalOpen: false,
+      itemData: {},
+    }
   }
-  return (
-    <PhotoListWrapper>
-      {data.map(item => {
-        return (
-          <ListItem
-            key={item.id}
-            onClick={() => onClick(item)}
+
+  onClick = (item) => {
+    this.setState({
+      itemData: item,
+      isModalOpen: true,
+    })
+  }
+
+  onClose = () => {
+    this.setState({
+      isModalOpen: false,
+    })
+  }
+
+  renderModalContent = (item) => {
+    const hasInstagram = !!item.user.instagram_username;
+    return <ModalContent>
+      <ModalImage src={item.urls.regular} alt={item.alt_description} />
+      <User>
+        <UserDetailWrapper>
+          <UserProfileImage src={item.user.profile_image.large} alt={item.user.name} />
+          <UserDetail>
+            <UserName>{item.user.first_name}</UserName>
+            { 
+              hasInstagram &&
+              <UserInstagram
+                href={`https://instagram.com/${item.user.instagram_username}`}
+                target={'_blank'}
+                title={item.user.name}
+              >
+                  @{item.user.instagram_username}
+              </UserInstagram>
+            }
+          </UserDetail>
+        </UserDetailWrapper>
+        <DownloadButtonWrapper>
+          <DownloadButton
+            download={`${item.links.download}?force=true`}
+            href={`${item.links.download}?force=true`}
+            target={'_blank'}
+            title={item.alt_description}
           >
-            <img src={item.urls.small}  alt={item.alt_description}/>
-          </ListItem>
-        )
-      })}
-      {
-        isModalOpen && 
-        <Modal
-          isOpen={isModalOpen}
-          onClose={() => setModalOpen(false)}
-          children={renderModalContent(itemData)}
-        />
-      }
-    </PhotoListWrapper>
-  );
+            <DownloadIcon src={downloadSvg} alt={item.alt_description} />
+            <DownloadText className={'download-text'}>Download</DownloadText>
+          </DownloadButton>
+        </DownloadButtonWrapper>
+      </User>
+    </ModalContent>
+  }
+
+  render() {
+    const {
+      isModalOpen,
+      itemData
+    } = this.state;
+    const {
+      data
+    } = this.props;
+    return (
+      <>
+        <PhotoListWrapper>
+          {data.map(item => {
+            return (
+              <ListItem
+                key={item.id}
+                onClick={() => this.onClick(item)}
+              >
+                <img src={item.urls.small}  alt={item.alt_description}/>
+              </ListItem>
+            )
+          })}
+          {
+            isModalOpen && 
+            <Modal
+              isOpen={isModalOpen}
+              onClose={this.onClose}
+              children={this.renderModalContent(itemData)}
+            />
+          }
+        </PhotoListWrapper>
+      </>
+    );
+  }
 };
+
+export default PhotoList;
