@@ -25,16 +25,16 @@ const PaginationButton = styled.div`
 class Pagination extends React.Component {
   createControls = () => {
     const {
-      totalPage,
+      total,
       activePage,
       onChange,
     } = this.props;
     let controls = [];
-    let totalPageCount = totalPage / 10;
-    if (totalPageCount > 11) {
-      totalPageCount = 11;
+    let totalCount = total / 10;
+    if (totalCount > 11) {
+      totalCount = 11;
     }
-    for (let i = 1; i <= totalPageCount; i++) {
+    for (let i = 1; i <= totalCount; i++) {
       const isActive = i === activePage;
       controls.push(
         <PaginationButton
@@ -51,9 +51,9 @@ class Pagination extends React.Component {
 
   render() {
     const {
-      totalPage
+      total
     } = this.props;
-    if (totalPage < 20) return null;
+    if (total < 20) return null;
     return (
       <PaginationWrapper>
         {this.createControls()}

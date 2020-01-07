@@ -14,6 +14,7 @@ const PhotoListContainer = styled.section`
   height: 100vh;
   width: 100%;
   background: white;
+  text-align: center;
 `;
 
 export default () => {
@@ -23,10 +24,9 @@ export default () => {
     data, 
     isApiRequested, 
     isLoading, 
-    totalPage,
+    total,
     page,
   } = state;
-
   const onChange = (i) => {
     dispatch({type: 'SET_PAGE',  payload: i });
     getData(state, i, dispatch);
@@ -39,8 +39,7 @@ export default () => {
       getData({searchTerm: query, collection}, 1, dispatch);
     }
   }, [collection, dispatch, isApiRequested, query]);
- 
-  if (!isApiRequested) return null;
+
   return (
     <>
       <Loading />
@@ -55,7 +54,7 @@ export default () => {
               collection={collection}
             /> 
             <Pagination 
-              totalPage={totalPage}
+              total={total}
               activePage={page}
               onChange={onChange}
             />

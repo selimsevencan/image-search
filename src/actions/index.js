@@ -3,5 +3,4 @@ export const SELECT_COLLECTION = 'SELECT_COLLECTION';
 export const SEARCH_DATA = 'SEARCH_DATA';
 export const SEARCH_SUCCESS = 'SEARCH_SUCCESS';
 export const SEARCH_ERROR = 'SEARCH_ERROR';
-export const CHECK_REQUEST = 'CHECK_REQUEST';
 export const SET_PAGE = 'SET_PAGE';
