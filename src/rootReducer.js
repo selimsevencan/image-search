@@ -4,7 +4,6 @@ import {
   SEARCH_SUCCESS,
   SEARCH_ERROR,
   SELECT_COLLECTION,
-  CHECK_REQUEST,
   SET_PAGE,
 } from './actions';
 
@@ -41,23 +40,18 @@ export const reducer = (state = initialState,  action) => {
         isApiRequested: true,
         isLoading: true,
       };
-    case CHECK_REQUEST:
-      return {
-        ...state,
-        data: action.payload.data,
-        isLoading: false,
-      };
     case SEARCH_SUCCESS:
       return {
         ...state,
         isLoading: false,
+        isApiRequested: true,
         data: action.payload.data.results,
-        totalPage: action.payload.data.total_pages,
-        [action.payload.apiReuqestName]: action.payload.data.results,
+        total: action.payload.data.total,
       };
     case SEARCH_ERROR:
       return {
         ...state,
+        isApiRequested: true,
         error: action.payload.error,
       };
     default:

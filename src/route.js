@@ -15,7 +15,7 @@ export default () => {
       <Switch>
         <Route 
           path="/list/:query/:collection"
-          render={(props) => <List {...props} />}
+          children={<List />}
         />
         <Route
          path="/" 
