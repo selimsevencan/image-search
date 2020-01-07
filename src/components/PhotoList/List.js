@@ -8,6 +8,11 @@ const ModalContent = styled.div`
   background-color: #fff;
   border-radius: 10px;
   padding: 20px;
+  @media only screen and (max-width: 500px) {
+    width: 80%;
+    position: absolute;
+    top: 30px;
+  }
 `;
 
 const ModalImage = styled.img`
@@ -16,6 +21,9 @@ const ModalImage = styled.img`
   height: 70vh;
   @media only screen and (max-width: 950px) {
     height: 60vh;
+  }
+  @media only screen and (max-width: 500px) {
+    height: 40vh;
   }
 `;
 
@@ -133,6 +141,7 @@ const PhotoListWrapper = styled.div`
   }
   @media only screen and (max-width: 780px) {
     margin-top: 350px;
+    padding: 0;
   }
 `;
 
