@@ -40,6 +40,7 @@ const Select = styled.select`
   -moz-appearance:none;
   -webkit-appearance:none;
   appearance:none;
+  background: white;
   &:-ms-expand {
     display:none;
    }
