@@ -40,10 +40,10 @@ const Select = styled.select`
   -moz-appearance:none;
   -webkit-appearance:none;
   appearance:none;
-  &:-moz-focusring {
-    color: transparent;
-    text-shadow: 0 0 0 #000;
-  }
+  background: white;
+  &:-ms-expand {
+    display:none;
+   }
   @media only screen and (max-width: 425px) {
     width: 213px;
   }

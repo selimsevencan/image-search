@@ -30,6 +30,11 @@ ${({ isFixed }) => isFixed && `
     padding-top: 10px;
     height: auto;
   }
+  @media only screen and (max-width: 500px) {
+    padding-top: 10px;
+    position: unset;
+    height: auto;
+  }
 `}
   ${({ isFixed }) => !isFixed && `
       padding-top: 10%;
