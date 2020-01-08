@@ -24,7 +24,7 @@ const DropdownWrapper = styled.div`
   &:after {
     content: "";
     position: absolute;
-    top: 44px;
+    top: 49px;
     margin-left: auto;
     margin-right: auto;
     left: 0;
@@ -46,7 +46,7 @@ const DropdownWrapper = styled.div`
 const Select = styled.select`
   text-transform: capitalize;
   width: 410px;
-  height: 45px;
+  height: 50px;
   font-size: 14px;
   border-radius: 4px;
   padding-left: 8px;

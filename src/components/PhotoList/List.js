@@ -104,7 +104,8 @@ const DownloadButton = styled.a`
   }
 
   @media only screen and (max-width: 780px) {
-    width: 150px;
+    width: 130px;
+    padding: 10px;
   }
 `;
 
@@ -117,6 +118,12 @@ const DownloadText = styled.span`
   font-size: 18px;
   font-weight: bold;
   line-height: 13px;
+
+  @media only screen and (max-width: 780px) {
+    margin-left: 5px;
+    line-height: 30px;
+
+  }
 `;
 
 const PhotoListWrapper = styled.div`

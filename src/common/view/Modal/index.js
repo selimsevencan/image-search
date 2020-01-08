@@ -5,7 +5,12 @@ import styled from 'styled-components'
 import Portal from '../Portal';
 
 const ModalContainer = styled.div`
-  margin: 20px;
+  margin: 20px auto;
+  width: 70%;
+  @media only screen and (max-width: 780px) {
+    margin: 10px auto;
+    width: 80%;
+  }
 `;
 
 export default (props) => {
