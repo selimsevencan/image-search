@@ -4,3 +4,4 @@ export const SEARCH_DATA = 'SEARCH_DATA';
 export const SEARCH_SUCCESS = 'SEARCH_SUCCESS';
 export const SEARCH_ERROR = 'SEARCH_ERROR';
 export const SET_PAGE = 'SET_PAGE';
+export const RETURN_HOME = 'RETURN_HOME';
