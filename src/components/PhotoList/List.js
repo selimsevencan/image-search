@@ -82,6 +82,7 @@ const DownloadButtonWrapper = styled.div`
 const DownloadButton = styled.a`
   margin-left: auto;
   background: #FFFFFF;
+  align-items: center;
   border: 2px solid #2A2B8D;
   box-sizing: border-box;
   border-radius: 10px;
@@ -116,10 +117,6 @@ const DownloadText = styled.span`
   font-size: 18px;
   font-weight: bold;
   vertical-align: middle;
-  @media only screen and (max-width: 425px) {
-    margin-left: 5px;
-    margin-top: 5px;
-  }
 `;
 
 const PhotoListWrapper = styled.div`
@@ -128,6 +125,9 @@ const PhotoListWrapper = styled.div`
   column-gap: 1em;
   padding: 20px;
 
+  @media only screen and (min-width: 1700px)  {
+    column-count: 4;
+  }
   @media only screen and (max-width: 1355px) and (min-width: 1100px) {
     margin-top: 130px;
     column-count: 2;

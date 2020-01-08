@@ -46,7 +46,7 @@ const DropdownWrapper = styled.div`
 
   @media only screen and (max-width: 425px) {
     &:after {
-      width: 213px;
+      width: 200px;
     }
   } 
 `;

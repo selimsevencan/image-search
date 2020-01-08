@@ -5,12 +5,14 @@ import styled from 'styled-components';
 import { useHistory } from "react-router-dom";
 
 const ButtonContainer = styled.div`
-  margin-top: 60px;
-  margin-bottom: 10px;
+  margin: 60px 0 10px 0;
 
   ${({ isApiRequested }) => isApiRequested && `
     @media only screen and (min-width: 1300px) {
       margin-top: 11px;
+    }
+    @media only screen and (max-width: 425px) {
+      margin: 10px 0;
     }
   `}
 `;
