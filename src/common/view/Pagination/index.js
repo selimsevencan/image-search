@@ -14,10 +14,10 @@ const PaginationButton = styled.div`
   padding: 0.5em 0.75em;
   cursor: pointer;
   &:hover {
-    filter: brightness(50%);
+    background: #2A2B8D;
   }
   ${({ active }) => active && `
-    background-color: #4D7EA8;
+    background-color: #2A2B8D;
     color: white;
   `}
 `;
@@ -30,7 +30,7 @@ class Pagination extends React.Component {
       onChange,
     } = this.props;
     let controls = [];
-    let totalCount = total / 10;
+    let totalCount = total;
     if (totalCount > 11) {
       totalCount = 11;
     }
@@ -53,7 +53,7 @@ class Pagination extends React.Component {
     const {
       total
     } = this.props;
-    if (total < 20) return null;
+    if (total < 10) return null;
     return (
       <PaginationWrapper>
         {this.createControls()}

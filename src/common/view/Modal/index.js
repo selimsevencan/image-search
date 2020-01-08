@@ -1,36 +1,30 @@
 import React from 'react';
+import Overlay from '../Overlay';
 import styled from 'styled-components'
-
+import { useKeyboardEvent } from '../../../utils.js'
 import Portal from '../Portal';
 
 const ModalContainer = styled.div`
-  background: rgba(5, 4, 23, 0.8);
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 20;
+  margin: 20px auto;
+  width: 50%;
+  @media only screen and (max-width: 780px) {
+    margin: 10px auto;
+    width: 80%;
+  }
 `;
 
 export default (props) => {
-  const onClose = (e) => {
-    if (e.target.className.includes('modal')) {
-      props.onClose();
-    }
-  }
+  useKeyboardEvent(27, props.onClose);
   if (!props.isOpen) return null;
   return (
     <Portal>
-      <ModalContainer 
-        onClick={onClose}
-        className={'modal'}
+      <Overlay
+        onClose={props.onClose}
       >
-        {props.children}
-      </ModalContainer>
+        <ModalContainer>
+          {props.children}
+        </ModalContainer>
+      </Overlay>
     </Portal>
   )
 }

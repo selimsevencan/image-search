@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { useEffect } from 'react';
 
 const localStorage = window.localStorage;
 
@@ -36,4 +37,20 @@ export const checkRequest = (apiReuqestName) => {
     return true;
   }
   return false;
+}
+
+
+export function useKeyboardEvent(key, callback) {
+  useEffect(() => {
+    const handler = function(event) {
+      if (event.keyCode === key) {
+        callback();
+      }
+    }
+
+    window.addEventListener('keydown', handler)
+    return () => {
+      window.removeEventListener('keydown', handler)
+    }
+  }, [callback, key]);
 }
