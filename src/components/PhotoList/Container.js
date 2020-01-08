@@ -11,7 +11,8 @@ import { getData } from '../../utils.js';
 
 const PhotoListContainer = styled.section`
   position: relative;
-  height: 100vh;
+  height: auto;
+  min-height: 100vh;
   width: 100%;
   background: white;
   text-align: center;
@@ -38,7 +39,7 @@ export default () => {
       dispatch({type: 'SELECT_COLLECTION',  payload: collection });
       getData({searchTerm: query, collection}, 1, dispatch);
     }
-  }, [collection, dispatch, isApiRequested, query]);
+  }, [collection, dispatch, isApiRequested, query, state]);
 
   return (
     <>

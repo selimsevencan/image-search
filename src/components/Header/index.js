@@ -26,7 +26,7 @@ ${({ isFixed }) => isFixed && `
   z-index: 2;
   @media only screen and (max-width: 1300px) {
     display: inline-block;
-    height: 350px;
+    height: auto;
   }
   @media only screen and (max-width: 780px) {
     display: inline-block;
@@ -41,7 +41,7 @@ ${({ isFixed }) => isFixed && `
   }
 `}
   ${({ isFixed }) => !isFixed && `
-      padding-top: 10%;
+      padding-top: 140px;
       display: inline-block;
     }
   `}

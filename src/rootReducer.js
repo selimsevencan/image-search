@@ -46,7 +46,7 @@ export const reducer = (state = initialState,  action) => {
         isLoading: false,
         isApiRequested: true,
         data: action.payload.data.results,
-        total: action.payload.data.total,
+        total: action.payload.data.total_pages,
       };
     case SEARCH_ERROR:
       return {

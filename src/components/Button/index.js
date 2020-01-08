@@ -1,15 +1,18 @@
 import React, { useContext } from 'react';
 import { Context } from '../../Store';
 import { getData } from '../../utils.js';
-import { Link } from "react-router-dom";
 import styled from 'styled-components';
+import { useHistory } from "react-router-dom";
 
 const ButtonContainer = styled.div`
-  margin-top: 11px;
+  margin-top: 60px;
+  margin-bottom: 10px;
 
-  @media only screen and (max-width: 780px) {
-    margin: 10px 0;
-  }
+  ${({ isApiRequested }) => isApiRequested && `
+    @media only screen and (min-width: 1300px) {
+      margin-top: 11px;
+    }
+  `}
 `;
 const Button = styled.button`
   background: #2A2B8D;
@@ -17,6 +20,7 @@ const Button = styled.button`
   width: 246px;
   height: 50px;
   font-size: 14px;
+  font-weight: bold;
   letter-spacing: 0.1em;
   border: 0;
   color: #FFFFFF;
@@ -33,14 +37,11 @@ const Button = styled.button`
   @media only screen and (max-width: 930px) {
     width: 200px;
   }
-
-  ${({ extraMargin }) => extraMargin && `
-    margin-top: 75px;
-  `}
 `;
 
 export default () => {
   const [state, dispatch] = useContext(Context);
+  const history = useHistory();
   const { 
     searchTerm,
     isLoading,
@@ -50,22 +51,20 @@ export default () => {
   const onClick = () => {
     dispatch({type: 'SET_PAGE',  payload: 1 });
     getData(state, 1, dispatch);
+    history.push(`/list/${searchTerm}/${collection}`);
   };
   const isDisabled = !Boolean(searchTerm) || isLoading;
   
   return (
-    <ButtonContainer>
-      <Link 
-        to={`/list/${searchTerm}/${collection}`}
+    <ButtonContainer
+      isApiRequested={isApiRequested}
+    >
+      <Button
+        onClick={onClick}
+        disabled={isDisabled}
       >
-        <Button
-          onClick={onClick}
-          disabled={isDisabled}
-          extraMargin={!isApiRequested}
-        >
-          SEARCH
-        </Button>
-      </Link>
+        SEARCH
+      </Button>
     </ButtonContainer>
   );
 };

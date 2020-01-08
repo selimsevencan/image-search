@@ -4,20 +4,15 @@ import Modal from '../../common/view/Modal';
 import downloadSvg from '../../common/view/Icon/download.svg';
 
 const ModalContent = styled.div`
-  // width: 50%;
   background-color: #fff;
   border-radius: 10px;
   padding: 20px;
-  // @media only screen and (max-width: 500px) {
-  //   width: 80%;
-  //   position: absolute;
-  //   top: 30px;
-  // }
+  text-align: center;
 `;
 
 const ModalImage = styled.img`
-  text-align: center;
-  width: 100%;
+  width: auto;
+  max-width: 100%;
   height: 70vh;
   @media only screen and (max-width: 950px) {
     height: 60vh;
@@ -58,8 +53,10 @@ const UserName = styled.p`
   font-weight: bold;
   font-size: 20px;
   line-height: 0.1;
+  text-align: left;
   @media only screen and (max-width: 950px) {
     line-height: 5px;
+    text-align: center;
   }
 `;
 
@@ -75,7 +72,7 @@ const UserInstagram = styled.a`
 
 const DownloadButtonWrapper = styled.div`
   margin-left: auto;
-  
+  align-items: center;
   @media only screen and (max-width: 950px) {
     text-align: center;
     margin-top: 15px;
@@ -104,25 +101,24 @@ const DownloadButton = styled.a`
   }
 
   @media only screen and (max-width: 780px) {
-    width: 130px;
+    width: 140px;
     padding: 10px;
   }
 `;
 
 const DownloadIcon = styled.img`
   margin-right: auto;
+  vertical-align: middle;
 `;
 
 const DownloadText = styled.span`
   margin-left: auto;
   font-size: 18px;
   font-weight: bold;
-  line-height: 13px;
-
-  @media only screen and (max-width: 780px) {
+  vertical-align: middle;
+  @media only screen and (max-width: 425px) {
     margin-left: 5px;
-    line-height: 30px;
-
+    margin-top: 5px;
   }
 `;
 
@@ -160,7 +156,6 @@ const ListItem = styled.div`
   display: inline-block;
   margin: 10px;
   width: 100%;
-
   @media only screen and (max-width: 500px) {
     margin: 10px 0;
     height: auto;

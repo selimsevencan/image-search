@@ -4,9 +4,17 @@ import { Context } from '../../Store';
 import styled from 'styled-components';
 
 const DropdownWrapper = styled.div`
-  margin-top: 11px;
+  margin-top: 20px;
   position: relative;
   display: inline-block;
+  
+
+  ${({ isApiRequested }) => isApiRequested && `
+    @media only screen and (min-width: 1300px) {
+     margin-top: 11px;
+    }
+  `}
+
   &:before {
     content: "";
     position: absolute;
@@ -24,7 +32,7 @@ const DropdownWrapper = styled.div`
   &:after {
     content: "";
     position: absolute;
-    top: 49px;
+    top: 48px;
     margin-left: auto;
     margin-right: auto;
     left: 0;
@@ -39,15 +47,16 @@ const DropdownWrapper = styled.div`
   @media only screen and (max-width: 425px) {
     &:after {
       width: 213px;
-  }
-}
+    }
+  } 
 `;
 
 const Select = styled.select`
   text-transform: capitalize;
   width: 410px;
-  height: 50px;
+  height: 48px;
   font-size: 14px;
+  font-weight: bold;
   border-radius: 4px;
   padding-left: 8px;
   color: #050417;
@@ -56,6 +65,7 @@ const Select = styled.select`
   -webkit-appearance:none;
   appearance:none;
   background: white;
+  font-family: 'Open Sans', -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-seri,sans-serif;
   &:-ms-expand {
     display:none;
    }
@@ -92,14 +102,16 @@ const options = [
 ];
 
 export default () => {
-  const [{collection}, dispatch] = useContext(Context);
+  const [{collection, isApiRequested}, dispatch] = useContext(Context);
 
   const onChange = (e) => {
     dispatch({type: 'SELECT_COLLECTION',  payload: e.target.value });
   }
 
   return (
-    <DropdownWrapper>
+    <DropdownWrapper
+      isApiRequested={isApiRequested}
+    >
       <Select
         onChange={onChange}
         placeholder={'Collections'}
