@@ -156,6 +156,7 @@ const ListItem = styled.div`
   display: inline-block;
   margin: 10px;
   width: 100%;
+  cursor: pointer;
   @media only screen and (max-width: 500px) {
     margin: 10px 0;
     height: auto;

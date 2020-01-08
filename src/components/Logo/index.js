@@ -1,13 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Context } from '../../Store';
 import styled from 'styled-components';
+import { useHistory } from "react-router-dom";
 
 const LogoWrapper = styled.div`
- margin-left: -20px;
+  margin-left: -20px;
+  cursor: pointer;
 `;
 
 export default () => {
+  const history = useHistory();
+  const [, dispatch] = useContext(Context);
+  const onClick = () => {
+    dispatch({type: 'RETURN_HOME',  payload: false });
+    history.push('/');
+  }
   return (
-    <LogoWrapper>
+    <LogoWrapper
+      onClick={onClick}
+    >
     <svg width="222" height="131" viewBox="0 0 222 131" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect x="76" width="70" height="70" rx="26" fill="url(#paint0_linear)"/>
       <g clipPath="url(#clip0)">

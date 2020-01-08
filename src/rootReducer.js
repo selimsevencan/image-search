@@ -5,6 +5,7 @@ import {
   SEARCH_ERROR,
   SELECT_COLLECTION,
   SET_PAGE,
+  RETURN_HOME,
 } from './actions';
 
 export const initialState = {
@@ -24,6 +25,11 @@ export const reducer = (state = initialState,  action) => {
         ...state,
         searchTerm: action.payload,
       };
+    case RETURN_HOME:
+      return {
+        ...state,
+        isApiRequested: action.payload,
+      }
     case SET_PAGE:
       return {
         ...state,
