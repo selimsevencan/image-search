@@ -6,11 +6,25 @@ import styled from 'styled-components';
 const DropdownWrapper = styled.div`
   margin-top: 11px;
   position: relative;
-
+  display: inline-block;
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    margin-top: -3px;
+    height: 0;
+    width: 0;
+    right: 20px;
+    top: 25px;
+    border-top: 6px solid #050417;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    pointer-events: none;
+  }
   &:after {
     content: "";
     position: absolute;
-    top: 49px;
+    top: 44px;
     margin-left: auto;
     margin-right: auto;
     left: 0;
@@ -20,9 +34,10 @@ const DropdownWrapper = styled.div`
     background: #D5D7E5;
     opacity: 0.7;
     border-radius: 0 0 4px 4px;
-}
+  } 
+
   @media only screen and (max-width: 425px) {
-    &:after { 
+    &:after {
       width: 213px;
   }
 }
@@ -31,7 +46,7 @@ const DropdownWrapper = styled.div`
 const Select = styled.select`
   text-transform: capitalize;
   width: 410px;
-  height: 50px;
+  height: 45px;
   font-size: 14px;
   border-radius: 4px;
   padding-left: 8px;

@@ -10,6 +10,8 @@ import Dropdown from '../Dropdown';
 const Header = styled.header`
 ${({ isFixed }) => isFixed && `
   position: fixed;
+  display: inline-block;
+  margin: 0 auto;
   background: #050417;
   display: flex;
   top: 0;
@@ -23,10 +25,11 @@ ${({ isFixed }) => isFixed && `
   overflow: hidden;
   z-index: 2;
   @media only screen and (max-width: 1300px) {
-    display: block;
+    display: inline-block;
     height: 350px;
   }
   @media only screen and (max-width: 780px) {
+    display: inline-block;
     padding-top: 10px;
     height: auto;
   }
@@ -34,10 +37,12 @@ ${({ isFixed }) => isFixed && `
     padding-top: 10px;
     position: unset;
     height: auto;
+    display: inline-block;
   }
 `}
   ${({ isFixed }) => !isFixed && `
       padding-top: 10%;
+      display: inline-block;
     }
   `}
 `;

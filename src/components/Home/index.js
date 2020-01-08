@@ -6,15 +6,15 @@ import Loading from '../Loading';
 
 
 const GlobalStyle = createGlobalStyle`
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
-#modal-root {
-  position: relative;
-  z-index: 10;
-}
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Open Sans;
+  }
+  #modal-root {
+    position: relative;
+    z-index: 10;
+  }
 `;
 
 
