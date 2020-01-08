@@ -143,12 +143,24 @@ const PhotoListWrapper = styled.div`
     margin-top: 350px;
     padding: 0;
   }
+  @media only screen and (max-width: 500px) {
+    margin-top: 0px;
+    padding: 0px;
+  }
 `;
 
 const ListItem = styled.div`
   display: inline-block;
   margin: 10px;
   width: 100%;
+
+  @media only screen and (max-width: 500px) {
+    margin: 10px 0;
+    height: auto;
+    img {
+      width: 100%;
+    }
+  }
 `;
 
  class PhotoList extends React.Component {
