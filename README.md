@@ -18,8 +18,6 @@ The specs of the project are:
 ```
 
 ## Dependencies
-```
--[styled-components](https://https://www.styled-components.com)
--[axios](https://github.com/axios/axios)
--[react-router-dom](https://reacttraining.com/react-router/web/guides/quick-start)
-```
+- [styled-components](https://https://www.styled-components.com)
+- [axios](https://github.com/axios/axios)
+- [react-router-dom](https://reacttraining.com/react-router/web/guides/quick-start)
