@@ -9,11 +9,10 @@ const GlobalStyle = createGlobalStyle`
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: open-sans;
 }
-#portal-root {
-  position: relative;
-  z-index: 10;
+#root {
+  overflow-x: hidden;
 }
 `;
 

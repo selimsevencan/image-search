@@ -4,15 +4,15 @@ import Modal from '../../common/view/Modal';
 import downloadSvg from '../../common/view/Icon/download.svg';
 
 const ModalContent = styled.div`
-  width: 50%;
+  // width: 50%;
   background-color: #fff;
   border-radius: 10px;
   padding: 20px;
-  @media only screen and (max-width: 500px) {
-    width: 80%;
-    position: absolute;
-    top: 30px;
-  }
+  // @media only screen and (max-width: 500px) {
+  //   width: 80%;
+  //   position: absolute;
+  //   top: 30px;
+  // }
 `;
 
 const ModalImage = styled.img`
