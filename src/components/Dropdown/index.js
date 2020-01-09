@@ -45,6 +45,7 @@ const DropdownWrapper = styled.div`
   } 
 
   @media only screen and (max-width: 425px) {
+    margin: 10px 0 ;
     &:after {
       width: 200px;
     }
@@ -70,7 +71,7 @@ const Select = styled.select`
     display:none;
    }
   @media only screen and (max-width: 425px) {
-    width: 213px;
+    width: 210px;
   }
 `;
 

@@ -28,7 +28,10 @@ export const reducer = (state = initialState,  action) => {
     case RETURN_HOME:
       return {
         ...state,
-        isApiRequested: action.payload,
+        isApiRequested: false,
+        searchTerm: '',
+        collection: 'nature',
+        page: 1,
       }
     case SET_PAGE:
       return {

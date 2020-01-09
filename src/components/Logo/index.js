@@ -12,7 +12,7 @@ export default () => {
   const history = useHistory();
   const [, dispatch] = useContext(Context);
   const onClick = () => {
-    dispatch({type: 'RETURN_HOME',  payload: false });
+    dispatch({type: 'RETURN_HOME' });
     history.push('/');
   }
   return (
